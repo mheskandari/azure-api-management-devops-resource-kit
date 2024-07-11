@@ -193,7 +193,7 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Extractor.Entity
                     }
 
                     //key vault values
-                    if (extractorParameters.ParamNamedValuesKeyVaultSecrets && namedValue?.Properties.KeyVault is not null)
+                    if (extractorParameters.ParamNamedValuesKeyVaultSecrets && namedValue?.Properties.KeyVault is not null && !string.IsNullOrEmpty(namedValue?.Properties?.KeyVault?.SecretIdentifier))
                     {
                         var validPName = NamingHelper.GenerateValidParameterName(namedValue.OriginalName, ParameterPrefix.Property);
                         keyVaultNamedValues.Add(validPName, namedValue.Properties.OriginalKeyVaultSecretIdentifierValue);
@@ -293,17 +293,17 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Extractor.Entity
             {
                 foreach (var parameterKey in resourceTemplate.Parameters.Keys)
                 {
-                    if (!mainParameterTemplate.Parameters.ContainsKey(parameterKey)) 
+                    if (!mainParameterTemplate.Parameters.ContainsKey(parameterKey))
                     {
                         this.logger.LogWarning($"Parameter {parameterKey} were not found in main parameters template");
                         continue;
                     }
-                    
+
                     var parameterValue = mainParameterTemplate.Parameters[parameterKey];
                     parameters.Add(parameterKey, parameterValue);
                 }
             }
-            
+
             return parametersTemplate;
         }
     }
