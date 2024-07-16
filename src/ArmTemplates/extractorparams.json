@@ -1,6 +1,15 @@
 {
-    "sourceApimName": "<source-apim-name>",
-    "destinationApimName": "<destination-apim-name>",
-    "resourceGroup": "<resource-group>",
-    "fileFolder": "<destination-file-folder>"
+  "sourceApimName": "vrail-devops-apim",
+  "destinationApimName": "<destination-apim-name>",
+  "resourceGroup": "vrail-devops-apim-rg",
+  "fileFolder": "extracted-raw",
+  "linkedTemplatesBaseUrl": "",
+  "linkedTemplatesUrlQueryString": "",
+  "policyXMLBaseUrl": "",
+  "policyXMLSasToken": "",
+  "paramServiceUrl": "false",
+  "paramNamedValue": "true",
+  "multipleAPIs": "vusionrail-accounts, vusionrail-devices",
+  "baseFileName": "vusionrail",
+  "namedValueKeyVaultSecrets": false
 }
