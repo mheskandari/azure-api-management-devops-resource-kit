@@ -212,6 +212,7 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Commands.Executo
         public async Task ExecuteGenerationBasedOnConfiguration()
         {
             this.logger.LogInformation("API Management Template");
+            this.logger.LogInformation("new template generator by us!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             this.logger.LogInformation("Connecting to {0} API Management Service on {1} Resource Group ...", this.extractorParameters.SourceApimName, this.extractorParameters.ResourceGroup);
 
             if (this.extractorParameters.SplitApis)
