@@ -15,8 +15,6 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Common.Templates
 
         public bool Required { get; set; }
 
-        public string SchemaId { get; set; }
-
         public string Type { get; set; }
 
         public string TypeName { get; set; }
